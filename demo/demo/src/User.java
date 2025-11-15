@@ -1,5 +1,4 @@
-package comgit config --global user.name "Your Name"
-git config --global user.email "your_email@example.com".wheelymammoth.model;
+package com.wheelymammoth.model;
 
 import java.util.UUID;
 
