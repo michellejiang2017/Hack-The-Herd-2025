@@ -1,14 +1,51 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Profile</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/style.css}">
 </head>
 <body>
-    <h1>My Profile</h1>
-    <a th:href="@{/}">Home</a>
-    <p><strong>Name:</strong> <span th:text="${user.name}">Name</span></p>
-    <p><strong>Email:</strong> <span th:text="${user.email}">Email</span></p>
-    <p><strong>Role:</strong> <span th:text="${user.role}">Role</span></p>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" th:href="@{/}">College Ride Share</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" th:href="@{/rides}">Rides</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/users/profile}">My Profile</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/login}">Login</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/register}">Register</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Profile content -->
+<div class="container mt-5">
+    <h2 class="text-center mb-4">My Profile</h2>
+
+    <div class="card mx-auto" style="max-width: 500px;">
+        <div class="card-body">
+            <p><strong>Name:</strong> <span th:text="${user.name}">Name</span></p>
+            <p><strong>Email:</strong> <span th:text="${user.email}">Email</span></p>
+            <p><strong>Role:</strong> <span th:text="${user.role}">Role</span></p>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a class="btn btn-primary" th:href="@{/rides}">View Rides</a>
+        <a class="btn btn-secondary" th:href="@{/}">Home</a>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
