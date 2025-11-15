@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Rides</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+    <h1>Ride Requests</h1>
+    <a th:href="@{/}">Home</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Pickup</th>
+                <th>Dropoff</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="ride : ${rides}">
+                <td th:text="${ride.pickupLocation}">Pickup</td>
+                <td th:text="${ride.dropoffLocation}">Dropoff</td>
+                <td th:text="${ride.status}">Status</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

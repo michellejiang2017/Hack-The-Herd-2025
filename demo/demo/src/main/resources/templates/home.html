@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>College Ride Share</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+    <h1>Welcome to College Ride Share!</h1>
+    <nav>
+        <a th:href="@{/rides}">Rides</a> | 
+        <a th:href="@{/users/profile}">My Profile</a> | 
+        <a th:href="@{/login}">Login</a> | 
+        <a th:href="@{/register}">Register</a>
+    </nav>
+</body>
+</html>
