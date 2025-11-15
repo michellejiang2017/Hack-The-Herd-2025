@@ -1,1 +1,0 @@
-# use stripe? or school sso?
