@@ -70,5 +70,81 @@ public class User {
     }
 
     public String getEmail() {
-        ret
+        return email;
+    }
 
+    public void setEmail(String email) { 
+        this.email = email; 
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) { 
+        this.phone = phone; 
+    }
+
+    public String getProfilePhotoUrl() {
+        return profilePhotoUrl;
+    }
+
+    public void setProfilePhotoUrl(String profilePhotoUrl) {
+        this.profilePhotoUrl = profilePhotoUrl;
+    }
+
+    public boolean isDriver() {
+        return isDriver;
+    }
+
+    public void setDriver(boolean driverStatus) {
+        this.isDriver = driverStatus;
+    }
+
+    public double getRating() {
+        return rating;
+    }
+
+    public int getRatingCount() {
+        return ratingCount;
+    }
+
+    // -------------------
+    // Behavior Methods
+    // -------------------
+
+    /**
+     * Add a rating and update the user's average rating.
+     *
+     * @param newRating rating from 1–5
+     */
+    public void addRating(double newRating) {
+        if (newRating < 1 || newRating > 5) {
+            throw new IllegalArgumentException("Rating must be between 1 and 5.");
+        }
+
+        double total = rating * ratingCount;
+        ratingCount++;
+        rating = (total + newRating) / ratingCount;
+    }
+
+    /**
+     * Update the user's profile fields.
+     */
+    public void updateProfile(String newName, String newPhone, String newPhotoUrl) {
+        if (newName != null && !newName.isEmpty()) this.name = newName;
+        if (newPhone != null && !newPhone.isEmpty()) this.phone = newPhone;
+        if (newPhotoUrl != null && !newPhotoUrl.isEmpty()) this.profilePhotoUrl = newPhotoUrl;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId='" + userId + '\'' +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", isDriver=" + isDriver +
+                ", rating=" + rating +
+                '}';
+    }
+}

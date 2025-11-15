@@ -28,4 +28,3 @@ public class Location {
         return address + " (" + latitude + ", " + longitude + ")";
     }
 }
-

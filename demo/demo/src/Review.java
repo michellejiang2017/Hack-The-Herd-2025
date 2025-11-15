@@ -34,4 +34,3 @@ public class Review {
     public String getComment() { return comment; }
     public LocalDateTime getTimestamp() { return timestamp; }
 }
-
